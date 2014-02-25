@@ -6,4 +6,4 @@ email  tools@inetsoftware.de
 date   2010-10-08
 name   Combined Search Google
 desc   Combines the search results from google with the intern search results. 
-url    http://www.inetsoftware.de/other-products/dokuwiki-plugins/searchcombinedgoogle
+url    https://github.com/i-net-software/dokuwiki-plugin-searchcombinedgoogle
