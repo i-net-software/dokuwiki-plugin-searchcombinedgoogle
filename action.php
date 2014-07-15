@@ -29,7 +29,7 @@ class action_plugin_searchcombinedgoogle extends DokuWiki_Action_Plugin {
         return is_array($info) ? $info : confToHash(dirname(__FILE__).'/plugin.info.txt');
     }
 
-	function register(&$controller) {
+	function register(Doku_Event_Handler $controller) {
 
 		// Log Query
 		$controller->register_hook('SEARCH_QUERY_FULLPAGE', 'AFTER', $this, 'searchlogger__log');
