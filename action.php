@@ -37,7 +37,7 @@ class action_plugin_searchcombinedgoogle extends DokuWiki_Action_Plugin {
         $controller->register_hook('SEARCH_QUERY_PAGE_TITLE', 'BEFORE',  $this, 'searchlogger__getPageTitle');
     }
 
-    function searchlogger__getPageTitle(&$event, $args)
+    function searchlogger__getPageTitle(Doku_Event &$event, $args)
     {
        if ( !empty($this->googleresults[$event->data['id']]) )
        {
@@ -50,7 +50,7 @@ class action_plugin_searchcombinedgoogle extends DokuWiki_Action_Plugin {
        return false;
     }
 
-    function searchlogger__getSnippet(&$event, $args) {
+    function searchlogger__getSnippet(Doku_Event &$event, $args) {
         if ( !empty($this->googleresults[$event->data['id']]) )
         {
             $event->data['text'] = strip_tags($this->googleresults[$event->data['id']]->content);
@@ -59,7 +59,7 @@ class action_plugin_searchcombinedgoogle extends DokuWiki_Action_Plugin {
         }
     }
 
-    function searchlogger__log(&$event, $args) {
+    function searchlogger__log(Doku_Event &$event, $args) {
         global $ACT, $conf, $cache_wikifn;
 
         if ( $ACT == 'search' ) {
